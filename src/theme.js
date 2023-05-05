@@ -199,12 +199,12 @@ export const ColorModeContext = React.createContext({
 export const useMode = () => {
     const [mode, setMode] = React.useState("dark");
 
-    const colorMode = useMemo(
+    const colorMode = React.useMemo(
         () => ({
             toggleColorMode: () => setMode((prev) => (prev === "light" ? "dark" : "light")),
         }), []
     );
 
-    const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
-    retutn [theme, colorMode];
+    const theme = React.useMemo(() => createTheme(themeSettings(mode)), [mode]);
+    return [theme, colorMode];
 };
