@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material'
-import React, { createContext } from 'react'
+import React from 'react'
 
 //color design tokens
 export const tokens = (mode) => ({
@@ -20,7 +20,7 @@ export const tokens = (mode) => ({
             100: "#d0d1d5",
             200: "#a1a4ab",
             300: "#727681",
-            400: "#434957",
+            400: "#1F2A40",
             500: "#141b2d",
             600: "#101624",
             700: "#0c101b",
@@ -127,7 +127,7 @@ export const themeSettings = (mode) => {
     return {
         palette:{
             mode: mode,
-            ...React(mode === 'dark'
+            ...(mode === 'dark'
             ? {
                 primary: {
                     main: colors.primary[500],
